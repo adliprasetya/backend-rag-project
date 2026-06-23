@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Api/Api.csproj" />
+    <Project Path="src/Infrastructure/Infrastructure.csproj" />
+    <Project Path="src/Worker/Worker.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/">
+    <Project Path="src/Modules/AI/AI.csproj" />
+    <Project Path="src/Modules/Chat/Chat.csproj" />
+    <Project Path="src/Modules/Document/Document.csproj" />
+    <Project Path="src/Modules/Identity/Identity.csproj" />
+    <Project Path="src/Modules/SharedKernel/SharedKernel.csproj" />
+    <Project Path="src/Modules/Workspace/Workspace.csproj" />
+  </Folder>
+</Solution>
