@@ -1,3 +1,4 @@
+using Identity.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using SharedKernel;
 using SharedKernel.Domain;
@@ -11,6 +12,7 @@ public class AppDbContext : DbContext, IUnitOfWork
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
         base.OnModelCreating(modelBuilder);
     }
 

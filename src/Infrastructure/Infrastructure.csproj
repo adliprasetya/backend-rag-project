@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Modules\SharedKernel\SharedKernel.csproj" />
+    <ProjectReference Include="..\Modules\Identity\Identity.csproj" />
   </ItemGroup>
 
   <ItemGroup>
