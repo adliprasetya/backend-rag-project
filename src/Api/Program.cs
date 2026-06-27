@@ -3,6 +3,7 @@ using Identity;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Workspace;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -17,6 +18,7 @@ try
 
     builder.Services.AddInfrastructure(builder.Configuration);
     builder.Services.AddIdentityModule();
+    builder.Services.AddWorkspaceModule();
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();

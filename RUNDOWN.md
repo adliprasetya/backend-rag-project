@@ -39,11 +39,15 @@
 - [x] AuthController (POST /api/auth/register, POST /api/auth/login)
 - [x] AuthController (GET /api/auth/me) — return user from JWT
 
-## ⬜ Phase 5: Workspace Module
-- [ ] Workspace entity
-- [ ] CRUD workspaces
-- [ ] User-workspace access control
-- [ ] API endpoints
+## ✅ Phase 5: Workspace Module (COMPLETED)
+- [x] Workspace entity (Name, Description, OwnerId, Members)
+- [x] WorkspaceMember entity (UserId, Role: Owner/Admin/Member/Viewer)
+- [x] Create workspace command + handler + validator
+- [x] Get user workspaces query + handler
+- [x] EF Core configuration (Workspaces + WorkspaceMembers tables)
+- [x] WorkspaceRepository (with GetUserWorkspacesAsync)
+- [x] DependencyInjection for module
+- [x] API: POST /api/workspaces (create), GET /api/workspaces (list mine)
 
 ## ⬜ Phase 6: Document Module
 - [ ] Document entity + metadata

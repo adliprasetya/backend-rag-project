@@ -2,6 +2,7 @@ using Identity.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using SharedKernel;
 using SharedKernel.Domain;
+using Workspace.Infrastructure;
 
 namespace Infrastructure.Persistence;
 
@@ -9,10 +10,14 @@ public class AppDbContext : DbContext, IUnitOfWork
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+    public DbSet<Workspace.Domain.Workspace> Workspaces => Set<Workspace.Domain.Workspace>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
         modelBuilder.ApplyConfiguration(new UserConfiguration());
+        modelBuilder.ApplyConfiguration(new WorkspaceConfiguration());
+        modelBuilder.ApplyConfiguration(new WorkspaceMemberConfiguration());
         base.OnModelCreating(modelBuilder);
     }
 
