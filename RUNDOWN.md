@@ -49,13 +49,13 @@
 - [x] DependencyInjection for module
 - [x] API: POST /api/workspaces (create), GET /api/workspaces (list mine)
 
-## ⬜ Phase 6: Document Module
-- [ ] Document entity + metadata
-- [ ] File upload endpoint
-- [ ] Text extraction service
-- [ ] Chunking pipeline
-- [ ] Store chunks + embeddings
-- [ ] Background worker untuk parsing
+## ✅ Phase 6: Document Module (COMPLETED)
+- [x] Document entity + metadata (Document.cs, DocumentChunk.cs, DocumentStatus)
+- [x] File upload endpoint (POST /api/documents/upload)
+- [x] Text extraction service (ITextExtractionService + TextExtractionService)
+- [x] Chunking pipeline (IChunkingService + ChunkingService)
+- [x] Store chunks + embeddings (DocumentChunk with embedding field, DocumentRepository)
+- [x] Background worker untuk parsing (DocumentWorker with polling pipeline)
 
 ## ⬜ Phase 7: Chat Module
 - [ ] Chat session entity

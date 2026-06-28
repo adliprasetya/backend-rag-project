@@ -1,3 +1,4 @@
+using Document;
 using Infrastructure.Persistence;
 using Identity;
 using Infrastructure;
@@ -19,6 +20,7 @@ try
     builder.Services.AddInfrastructure(builder.Configuration);
     builder.Services.AddIdentityModule();
     builder.Services.AddWorkspaceModule();
+    builder.Services.AddDocumentModule();
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
@@ -37,10 +39,14 @@ try
                 db.Database.EnsureCreated();
                 break;
             }
-            catch when (i < 4)
+            catch (Exception ex) when (i < 4)
             {
                 Log.Warning("Database not ready, retrying in 2s... (attempt {Attempt}/5)", i + 1);
                 await Task.Delay(2000);
+            }
+            catch (Exception ex)
+            {
+                Log.Warning("Database unavailable after 5 attempts. Continuing without DB: {Message}", ex.Message);
             }
         }
     }

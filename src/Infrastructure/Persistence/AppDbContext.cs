@@ -1,3 +1,4 @@
+using Document.Infrastructure;
 using Identity.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using SharedKernel;
@@ -11,6 +12,7 @@ public class AppDbContext : DbContext, IUnitOfWork
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     public DbSet<Workspace.Domain.Workspace> Workspaces => Set<Workspace.Domain.Workspace>();
+    public DbSet<Document.Domain.Document> Documents => Set<Document.Domain.Document>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -18,6 +20,8 @@ public class AppDbContext : DbContext, IUnitOfWork
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new WorkspaceConfiguration());
         modelBuilder.ApplyConfiguration(new WorkspaceMemberConfiguration());
+        modelBuilder.ApplyConfiguration(new DocumentConfiguration());
+        modelBuilder.ApplyConfiguration(new DocumentChunkConfiguration());
         base.OnModelCreating(modelBuilder);
     }
 

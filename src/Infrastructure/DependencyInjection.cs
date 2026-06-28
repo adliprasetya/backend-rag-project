@@ -32,6 +32,7 @@ public static class DependencyInjection
                 {
                     npgsql.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName);
                     npgsql.EnableRetryOnFailure(3, TimeSpan.FromSeconds(5), null);
+
                 }));
 
         services.AddScoped<DbContext>(sp => sp.GetRequiredService<AppDbContext>());
