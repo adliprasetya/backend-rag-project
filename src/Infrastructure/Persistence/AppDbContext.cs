@@ -1,3 +1,4 @@
+using Chat.Infrastructure;
 using Document.Infrastructure;
 using Identity.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ public class AppDbContext : DbContext, IUnitOfWork
 
     public DbSet<Workspace.Domain.Workspace> Workspaces => Set<Workspace.Domain.Workspace>();
     public DbSet<Document.Domain.Document> Documents => Set<Document.Domain.Document>();
+    public DbSet<Chat.Domain.ChatSession> ChatSessions => Set<Chat.Domain.ChatSession>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,6 +24,8 @@ public class AppDbContext : DbContext, IUnitOfWork
         modelBuilder.ApplyConfiguration(new WorkspaceMemberConfiguration());
         modelBuilder.ApplyConfiguration(new DocumentConfiguration());
         modelBuilder.ApplyConfiguration(new DocumentChunkConfiguration());
+        modelBuilder.ApplyConfiguration(new ChatSessionConfiguration());
+        modelBuilder.ApplyConfiguration(new ChatMessageConfiguration());
         base.OnModelCreating(modelBuilder);
     }
 

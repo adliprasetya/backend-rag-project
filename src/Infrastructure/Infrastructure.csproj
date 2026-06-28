@@ -5,6 +5,7 @@
     <ProjectReference Include="..\Modules\Identity\Identity.csproj" />
     <ProjectReference Include="..\Modules\Workspace\Workspace.csproj" />
     <ProjectReference Include="..\Modules\Document\Document.csproj" />
+    <ProjectReference Include="..\Modules\Chat\Chat.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -57,12 +57,12 @@
 - [x] Store chunks + embeddings (DocumentChunk with embedding field, DocumentRepository)
 - [x] Background worker untuk parsing (DocumentWorker with polling pipeline)
 
-## ⬜ Phase 7: Chat Module
-- [ ] Chat session entity
-- [ ] Message entity
-- [ ] Create/get chat sessions
-- [ ] Send message endpoint
-- [ ] Conversation history
+## ✅ Phase 7: Chat Module (COMPLETED)
+- [x] Chat session entity
+- [x] Message entity
+- [x] Create/get chat sessions
+- [x] Send message endpoint
+- [x] Conversation history
 
 ## ⬜ Phase 8: AI Module (RAG Pipeline)
 - [ ] Embedding generation service

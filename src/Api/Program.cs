@@ -1,3 +1,4 @@
+using Chat;
 using Document;
 using Infrastructure.Persistence;
 using Identity;
@@ -21,6 +22,7 @@ try
     builder.Services.AddIdentityModule();
     builder.Services.AddWorkspaceModule();
     builder.Services.AddDocumentModule();
+    builder.Services.AddChatModule();
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
